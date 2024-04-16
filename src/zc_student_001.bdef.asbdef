@@ -1,0 +1,22 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_STUDENT_001  alias Student
+{
+  use create;
+  use update;
+  use delete;
+
+  use action setAdmitted;
+
+  use association _academires { create; }
+
+}
+
+define behavior for ZC_AR_001 alias AcademicResult
+{
+  use update;
+  use delete;
+
+  use association _student;
+}
